@@ -15,11 +15,12 @@ da_empilhado <- bind_rows(lista) %>%
 
 # Fazer a soma do que não é acidente e então a media por mês
 da_media_dp <- da_empilhado %>%
+  rename(mes = 1) %>% 
   mutate(tot = rowSums(.[2:59], na.rm = TRUE)) %>%
   select(1,69) %>%  
-  group_by(m_ea_s_do_d3_bito) %>% 
+  group_by(mes) %>% 
   summarize(media = (mean(tot, na.rm = TRUE)), dp = (sd(tot, na.rm = TRUE))) %>% 
-  filter(m_ea_s_do_d3_bito == "Abril")
+  filter(mes == "Abril")
 
 # Salvar os dados na pasta data
 write_csv(da_media_dp, "data/media_abril15_17.csv")            

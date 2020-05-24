@@ -1,5 +1,5 @@
 Package: mortes.amais.abril.covid
-Title: Confirma o número de mortes acima do esperado em abril
+Title: Confirma o número de mortes acima do esperado em abril em 2020
 Authors@R: 
     person(given = "Paulo",
            family = "Laurence",
